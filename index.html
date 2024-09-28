@@ -5,23 +5,25 @@
       PersonalInfoFormExtension,
     } from 'https://cdn.jsdelivr.net/gh/Convizr/EcomAgent/KungFunghiExtensionV2.1.js';
   
-    (function(d, t) {
-        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        v.onload = function() {
-          window.voiceflow.chat.load({
-            verify: { projectID: '66f873422fa7a1eea10efad6', apiKey: 'VF.DM.66f875860715b32e7f9ff78d.mHubRh9H4shCOALG' },
+window.addEventListener('DOMContentLoaded', (event) => {
+    var v = document.createElement('script');
+    v.onload = function() {
+        window.voiceflow.chat.load({
+            verify: { projectID: '66f873422fa7a1eea10efad6' },
             url: 'https://general-runtime.voiceflow.com',
             versionID: 'production',
             allowDangerousHTML: true,
             assistant: {
-              extensions: [
-                      TwoPartFormExtension,
-                      NoNameFormExtension,
-                      PersonalInfoFormExtension,
-              ],
+                extensions: [
+                    TwoPartFormExtension,
+                    NoNameFormExtension,
+                    PersonalInfoFormExtension,
+                ],
             }
-          });
-        }
-        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-    })(document, 'script');
+        });
+    };
+    v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+    v.type = "text/javascript"; 
+    document.body.appendChild(v);
+});
   </script>
